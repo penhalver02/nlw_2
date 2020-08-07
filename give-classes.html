@@ -70,10 +70,34 @@
                         <input name="cost" id="cost" type="number" required>
                     </div>
                 </fieldset>
-                <fieldset>
+                <fieldset id="schedule-items">
                     <legend>Horarios disponiveis
                         <button id="add-time">+ Novo horario</button>
                     </legend>
+
+                    <div class="schedule-item">
+                        <div class="select-block">
+                            <label for="weekday">Dia da semana</label>
+                            <select name="weekday[]" require>
+                                <option value="">Selecione uma opcao</option>
+                                <option value="0">Domingo</option>
+                                <option value="1">Segunda-feira</option>
+                                <option value="2">Terca-feira</option>
+                                <option value="3">Quarta-feira</option>
+                                <option value="4">Quinta-feira</option>
+                                <option value="5">Sexta-feira</option>
+                                <option value="6">Sabado</option>
+                            </select>
+                        </div>
+                        <div class="input-block">
+                            <label for="time_from">das</label>
+                            <input type="time" name="time_from[]" require>
+                        </div>
+                        <div class="input-block">
+                            <label for="time_to">Ate</label>
+                            <input type="time" name="time_to[]" require>
+                        </div>
+                    </div>
 
                     <div class="schedule-item">
                         <div class="select-block">
