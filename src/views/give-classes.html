@@ -56,20 +56,15 @@
                         <label for="subject">Materia</label>
                         <select name="subject" id="subject" required>
                             <option value="">Selecione uma opcao</option>
-                            <option value="0">Domingo</option>
-                            <option value="1">Segunda-feira</option>
-                            <option value="2">Terça-feira</option>
-                            <option value="3">Quarta-feira</option>
-                            <option value="4">Quinta-feira</option>
-                            <option value="5">Sexta-feira</option>
-                            <option value="6">Sábado</option>
-                        </select>
+                            {%for subject in subjects %}
+                                <option value="{{loop.index}}">{{subject}}</option>
+                            {%endfor%}
                     </div>
                     <div class="input-block">
                         <label for="cost">Custo da sua hora/aula
                             <small>(R$)</small>
                         </label>
-                        <input name="cost" id="cost" type="number" required>
+                        <input name="cost" type="cost" id="cost" type="number" required>
                     </div>
                 </fieldset>
                 <fieldset id="schedule-items">
@@ -82,6 +77,9 @@
                             <label for="weekday">Dia da semana</label>
                             <select name="weekday[]" require>
                                 <option value="">Selecione uma opcao</option>
+                                {%for weekday in weekdays %}
+                                    <option value="{{loop.index0}}">{{weekday}}</option>
+                                {%endfor%}
                                 <option value="0">Domingo</option>
                                 <option value="1">Segunda-feira</option>
                                 <option value="2">Terca-feira</option>
